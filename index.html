@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layane Ohana — Extensão de Cílios · Planaltina GO</title>
+<meta name="description" content="Layane Ohana · Especialista em extensão de cílios com fios leves e duradouros. Atendimento individual em Planaltina – GO.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23faf7f2'/><text x='32' y='44' font-family='Georgia' font-size='34' fill='%23b8935a' text-anchor='middle'>L</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf7f2;
+  --bg2:#f3ede2;
+  --card:#ffffff;
+  --ink:#2a2520;
+  --ink2:#4a423a;
+  --mute:#8a7f72;
+  --gold:#b8935a;
+  --gold2:#d4b888;
+  --line:#e8e2d5;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',system-ui,sans-serif;
+  --disp:'Italiana',serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--gold);color:#fff}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1180px,92vw);margin-inline:auto}
+.em{font-style:italic;color:var(--gold)}
+.eyebrow{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:400}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1;letter-spacing:-.005em}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .9s ease}
+.rv.in{opacity:1;transform:none}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;background:rgba(250,247,242,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+header.sc{border-color:var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;padding:1.05rem 0}
+.logo{font-family:var(--disp);font-size:1.35rem;letter-spacing:.1em;color:var(--ink)}
+.logo b{font-weight:400;color:var(--gold)}
+nav.desk{display:flex;gap:2.2rem}
+nav.desk a{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2);transition:color .25s}
+nav.desk a:hover{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.85rem 1.6rem;background:var(--ink);color:#faf7f2;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;transition:background .3s,transform .3s;cursor:pointer;border:0;font-family:inherit}
+.btn:hover{background:var(--gold)}
+.btn svg{width:14px;height:14px;fill:currentColor}
+.btn.outline{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn.outline:hover{background:var(--ink);color:#faf7f2}
+
+.burger{display:none;width:40px;height:40px;border:1px solid var(--line);background:none;cursor:pointer;flex-direction:column;justify-content:center;gap:5px;align-items:center}
+.burger i{display:block;width:18px;height:1px;background:var(--ink)}
+.mob{position:fixed;top:64px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);padding:1.4rem 6vw;display:none;flex-direction:column;gap:.6rem;z-index:45}
+.mob.open{display:flex}
+.mob a{padding:.6rem 0;font-size:.82rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink2);border-bottom:1px solid var(--line)}
+.mob a:last-of-type{border:0}
+
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:center;padding:8rem 0 5rem;position:relative}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.hero h1{font-size:clamp(3rem,7vw,5.8rem);margin:1.2rem 0 1.6rem}
+.hero .lead{color:var(--ink2);font-size:1.05rem;max-width:32rem;margin-bottom:2.2rem}
+.acts{display:flex;gap:.8rem;flex-wrap:wrap}
+.art{position:relative;aspect-ratio:1/1;display:grid;place-items:center}
+.art .circle{position:absolute;inset:0;border:1px solid var(--line);border-radius:50%}
+.art .circle.c2{inset:14%;border-color:var(--gold);opacity:.4}
+.art svg.lash{width:78%;color:var(--gold);position:relative;z-index:1}
+
+/* manifesto */
+.mani{padding:6rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.mani .wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:3rem;align-items:baseline}
+.mani .q{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,2.4vw,1.9rem);line-height:1.4;color:var(--ink)}
+.mani .q::before{content:"“";font-size:3rem;color:var(--gold);line-height:0;vertical-align:-.4em;margin-right:.2rem}
+.mani p{color:var(--ink2);max-width:38rem}
+
+/* procedimentos */
+.proc{padding:clamp(5rem,9vw,7rem) 0}
+.sec-head{text-align:center;margin-bottom:3.5rem}
+.sec-head h2{font-size:clamp(2.2rem,4.5vw,3.4rem);margin-top:1rem;max-width:18ch;margin-inline:auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+.card{background:var(--card);border:1px solid var(--line);padding:2rem 1.8rem;transition:border-color .35s,transform .35s}
+.card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.card .num{font-family:var(--disp);font-size:2.4rem;color:var(--gold);margin-bottom:.4rem;line-height:1}
+.card h3{font-size:1.35rem;margin-bottom:.6rem}
+.card h3 i{display:block;font-family:var(--sans);font-style:normal;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);margin-bottom:.3rem;font-weight:400}
+.card p{font-size:.92rem;color:var(--ink2)}
+
+/* galeria */
+.gallery{padding:clamp(5rem,9vw,7rem) 0;background:var(--bg2)}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin-top:3rem}
+.gallery-item{
+  position:relative;aspect-ratio:3/4;overflow:hidden;cursor:pointer;
+  background:var(--card);border:1px solid var(--line);
+  transition:transform .4s ease,box-shadow .4s ease
+}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease,opacity .4s ease}
+.gallery-item:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(42,37,32,.08)}
+.gallery-item:hover img{transform:scale(1.05)}
+.gallery-item .ph{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:.6rem;color:var(--mute);transition:color .3s,background .3s
+}
+.gallery-item .ph svg{width:34px;height:34px;stroke:var(--gold);stroke-width:1.2;fill:none}
+.gallery-item .ph span{font-size:.68rem;letter-spacing:.28em;text-transform:uppercase}
+.gallery-item:hover .ph{background:rgba(250,247,242,.4);color:var(--gold)}
+.gallery-item img.has-img + .ph{display:none}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(20,17,16,.92);z-index:100;display:none;align-items:center;justify-content:center;padding:2rem;backdrop-filter:blur(6px)}
+.lb.open{display:flex;animation:fadeIn .3s ease}
+.lb img{max-width:90vw;max-height:88vh;object-fit:contain;box-shadow:0 20px 80px rgba(0,0,0,.5)}
+.lb .close{position:absolute;top:1.5rem;right:1.8rem;width:48px;height:48px;background:transparent;border:1px solid rgba(255,255,255,.2);color:#fff;cursor:pointer;display:grid;place-items:center;transition:all .3s;font-size:1.4rem}
+.lb .close:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.lb .nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;background:transparent;border:1px solid rgba(255,255,255,.2);color:#fff;cursor:pointer;display:grid;place-items:center;transition:all .3s}
+.lb .nav:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.lb .nav svg{width:18px;height:18px;stroke:currentColor;stroke-width:1.5;fill:none}
+.lb .prev{left:1.5rem}
+.lb .next{right:1.5rem}
+.lb .count{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);color:#fff;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;opacity:.7}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* mapa */
+.loc{padding:clamp(5rem,9vw,7rem) 0}
+.loc .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:3.5rem;align-items:center}
+.loc h2{font-size:clamp(2rem,4vw,3rem);margin:1rem 0 1.3rem}
+.loc p{color:var(--ink2);margin-bottom:1.4rem;max-width:32rem}
+.addr{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--gold);margin-bottom:2rem}
+.mapframe{border:1px solid var(--line);padding:10px;background:var(--card)}
+.mapframe iframe{width:100%;height:380px;border:0;filter:grayscale(.6) contrast(.95) brightness(1.05)}
+
+/* cta final */
+.final{padding:6rem 0;text-align:center;background:var(--ink);color:#faf7f2}
+.final .small{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.final h2{font-size:clamp(2.2rem,5vw,3.8rem);margin-bottom:2rem;max-width:18ch;margin-inline:auto}
+.final .btn{background:var(--gold);color:var(--ink)}
+.final .btn:hover{background:#fff}
+.final .note{margin-top:1.4rem;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#a89c8e}
+
+/* footer */
+footer{padding:3rem 0 2rem;border-top:1px solid var(--line)}
+.foot-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;margin-bottom:1.8rem}
+.foot-cred{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.foot-cred .dev-btn{
+  display:inline-flex;align-items:center;gap:.5rem;padding:.55rem 1.1rem;
+  background:transparent;color:var(--gold);border:1px solid var(--gold);
+  font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;
+  font-family:inherit;cursor:pointer;transition:all .3s
+}
+.foot-cred .dev-btn:hover{background:var(--gold);color:var(--ink)}
+.foot-cred .dev-btn svg{width:12px;height:12px;fill:currentColor}
+.foot-copy{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);text-align:right}
+.foot-divider{width:40px;height:1px;background:var(--line);margin-bottom:1.2rem}
+
+/* wa flutuante */
+.wa{position:fixed;right:1.2rem;bottom:1.2rem;z-index:40;width:54px;height:54px;border-radius:50%;background:var(--gold);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.12);transition:transform .3s,background .3s}
+.wa:hover{transform:scale(1.08);background:var(--ink)}
+.wa svg{width:24px;fill:#fff}
+
+@media(max-width:900px){
+  nav.desk{display:none}.burger{display:flex}
+  .hero .wrap,.mani .wrap,.loc .wrap{grid-template-columns:1fr;gap:2.5rem}
+  .art{max-width:360px;margin-inline:auto}
+  .cards{grid-template-columns:1fr 1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);gap:.7rem}
+  .foot-grid{grid-template-columns:1fr;text-align:center}
+  .foot-copy{text-align:center}
+  .foot-cred{justify-content:center}
+}
+@media(max-width:560px){
+  .cards{grid-template-columns:1fr}
+  .hero{padding-top:6rem}
+  .lb .nav{display:none}
+}
+</style>
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="lash" viewBox="0 0 500 300" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+    <path d="M60,215 Q250,92 440,215"/>
+    <path d="M96,199 Q72,163 54,150"/>
+    <path d="M136,170 Q116,122 101,105"/>
+    <path d="M186,144 Q176,92 169,71"/>
+    <path d="M250,134 Q250,80 250,57"/>
+    <path d="M314,144 Q324,92 331,71"/>
+    <path d="M364,170 Q384,122 399,105"/>
+    <path d="M404,199 Q428,163 446,150"/>
+    <path d="M120,238 Q250,272 380,238" opacity=".5"/>
+  </symbol>
+  <symbol id="wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5-.3.6-.7.9-.5 1.2.7 1.2 1.6 2 2.8 2.6.3.2.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.2.5.3.6.4.1.2.1.8-.1 1.6Z"/></symbol>
+  <symbol id="cam" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></symbol>
+  <symbol id="chev-l" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="chev-r" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+</svg>
+
+<header id="top">
+  <div class="wrap bar">
+    <a class="logo" href="#top"><b>L</b>ayane Ohana</a>
+    <nav class="desk">
+      <a href="#manifesto">Manifesto</a>
+      <a href="#procedimentos">Procedimentos</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#onde">Onde</a>
+    </nav>
+    <div style="display:flex;gap:.7rem;align-items:center">
+      <a class="btn" href="https://wa.me/5561993972717?text=Ol%C3%A1%2C%20Layane!%20Quero%20agendar%20meu%20hor%C3%A1rio." target="_blank" rel="noopener"><svg><use href="#wa"/></svg> Agendar</a>
+      <button class="burger" id="burger" aria-label="Menu"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+  <div class="mob" id="mob">
+    <a href="#manifesto">Manifesto</a>
+    <a href="#procedimentos">Procedimentos</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#onde">Onde</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow rv">Extensão de cílios · Planaltina — GO</div>
+      <h1 class="rv">O verdadeiro luxo mora nos <i class="em">detalhes</i> do olhar.</h1>
+      <p class="lead rv">Fios leves, duradouros e naturais — desenhados um a um para parecerem seus. Só que no seu melhor dia.</p>
+      <div class="acts rv">
+        <a class="btn" href="https://wa.me/5561993972717?text=Ol%C3%A1%2C%20Layane!%20Quero%20agendar%20meu%20hor%C3%A1rio." target="_blank" rel="noopener"><svg><use href="#wa"/></svg> Agendar meu horário</a>
+        <a class="btn outline" href="#procedimentos">Ver procedimentos</a>
+      </div>
+  </div>      
+</section>
+
+<!-- MANIFESTO -->
+<section class="mani" id="manifesto">
+  <div class="wrap">
+    <div class="q rv">A beleza nunca foi sobre transformar quem você é — é sobre <i class="em">revelar</i> a sua melhor versão.</div>
+    <p class="rv">Como especialista em extensão de cílios e educadora, desenvolvi uma técnica que privilegia o que permanece: conforto, durabilidade e a naturalidade silenciosa de um olhar que se reconhece no espelho. Cada atendimento é um estudo — do formato dos seus olhos à sua rotina — para entregar um desenho único, feito à mão e pensado para durar.</p>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="proc" id="procedimentos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow rv">Procedimentos</div>
+      <h2 class="rv">Assinaturas <i class="em">do olhar.</i></h2>
+    </div>
+    <div class="cards">
+      <div class="card rv">
+        <div class="num">01</div>
+        <h3><i>Volume Brasileiro</i>Leveza com presença</h3>
+        <p>Fios intercalados que imitam a textura real dos seus cílios — volume na medida certa e movimento de verdade.</p>
+      </div>
+      <div class="card rv">
+        <div class="num">02</div>
+        <h3><i>Volume Inglês</i>Densidade sofisticada</h3>
+        <p>Preenchimento uniforme e marcante, com acabamento aveludado. Para quem gosta de ser notada sem precisar anunciar.</p>
+      </div>
+      <div class="card rv">
+        <div class="num">03</div>
+        <h3><i>Efeito Fox</i>O olhar que se alonga</h3>
+        <p>Fios ascendentes que elevam o canto externo e desenham o rosto — o efeito felino que abre o olhar.</p>
+      </div>
+      <div class="card rv">
+        <div class="num">04</div>
+        <h3><i>Lash Marrom</i>A cor da suavidade</h3>
+        <p>Fios em tom marrom que se fundem aos seus com discrição elegante. A escolha de quem prefere delicadeza.</p>
+      </div>
+      <div class="card rv">
+        <div class="num">05</div>
+        <h3><i>Remoção Segura</i>Renovar com carinho</h3>
+        <p>Remoção com produto específico, sem tocar na saúde dos seus fios naturais. Recomeçar também é cuidado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="gallery" id="galeria">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow rv">Galeria</div>
+      <h2 class="rv">Olhares <i class="em">revelados.</i></h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item rv" data-index="0">
+        <img src="" alt="" class="has-img" style="display:none">
+        <div class="ph"><svg><use href="#cam"/></svg><span>Foto 01</span></div>
+      </div>
+      <div class="gallery-item rv" data-index="1">
+        <img src="" alt="" class="has-img" style="display:none">
+        <div class="ph"><svg><use href="#cam"/></svg><span>Foto 02</span></div>
+      </div>
+      <div class="gallery-item rv" data-index="2">
+        <img src="" alt="" class="has-img" style="display:none">
+        <div class="ph"><svg><use href="#cam"/></svg><span>Foto 03</span></div>
+      </div>
+      <div class="gallery-item rv" data-index="3">
+        <img src="" alt="" class="has-img" style="display:none">
+        <div class="ph"><svg><use href="#cam"/></svg><span>Foto 04</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lightbox">
+  <button class="close" id="lb-close" aria-label="Fechar">×</button>
+  <button class="nav prev" id="lb-prev" aria-label="Anterior"><svg><use href="#chev-l"/></svg></button>
+  <button class="nav next" id="lb-next" aria-label="Próxima"><svg><use href="#chev-r"/></svg></button>
+  <img src="" alt="" id="lb-img">
+  <div class="count" id="lb-count">01 / 04</div>
+</div>
+
+<!-- MAPA -->
+<section class="loc" id="onde">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow rv">Onde</div>
+      <h2 class="rv">No coração de <i class="em">Planaltina.</i></h2>
+      <p class="rv">O studio está em Planaltina – Goiás, com atendimento exclusivamente com hora marcada. Sua vaga na agenda é um encontro marcado com você mesma.</p>
+      <div class="addr rv">Planaltina — GO · atendimento no studio</div>
+      <a class="btn rv" href="https://wa.me/5561993972717?text=Ol%C3%A1%2C%20Layane!%20Quero%20agendar%20meu%20hor%C3%A1rio." target="_blank" rel="noopener"><svg><use href="#wa"/></svg> Combinar meu horário</a>
+    </div>
+    <div class="mapframe rv">
+      <iframe title="Mapa — Planaltina, Goiás" loading="lazy" src="https://maps.google.com/maps?q=Planaltina%2C%20Goi%C3%A1s%2C%20Brasil&z=12&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final">
+  <div class="wrap">
+    <div class="small rv">Pronta?</div>
+    <h2 class="rv">Seu melhor olhar começa com uma <i class="em">conversa.</i></h2>
+    <a class="btn rv" href="https://wa.me/5561993972717?text=Ol%C3%A1%2C%20Layane!%20Quero%20agendar%20meu%20hor%C3%A1rio." target="_blank" rel="noopener"><svg><use href="#wa"/></svg> Chamar no WhatsApp</a>
+    <div class="note rv">61 99397-2717 · @layanebylash</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-cred">
+        <span>Site feito por Emanuel Araújo</span>
+        <a class="dev-btn" href="https://wa.me/5561992560713?text=Ol%C3%A1%2C%20Emanuel!%20Vi%20seu%20trabalho%20no%20site%20da%20Layane%20e%20quero%20conversar." target="_blank" rel="noopener">
+          <svg><use href="#wa"/></svg> Fale comigo
+        </a>
+      </div>
+      <div class="foot-copy">© 2026 Layane Ohana · Planaltina — GO</div>
+    </div>
+    <div class="foot-divider"></div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5561993972717?text=Ol%C3%A1%2C%20Layane!%20Quero%20agendar%20meu%20hor%C3%A1rio." target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp">
+  <svg><use href="#wa"/></svg>
+</a>
+
+<script>
+addEventListener('scroll',()=>document.getElementById('top').classList.toggle('sc',scrollY>30),{passive:true});
+document.getElementById('burger').onclick=()=>document.getElementById('mob').classList.toggle('open');
+document.querySelectorAll('.mob a').forEach(a=>a.onclick=()=>document.getElementById('mob').classList.remove('open'));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+/* ============ GALERIA / LIGHTBOX ============ */
+// Para adicionar suas fotos, basta substituir os src="" abaixo pelos caminhos das imagens:
+const fotos = [
+  // 'caminho/foto1.jpg',
+  // 'caminho/foto2.jpg',
+  // 'caminho/foto3.jpg',
+  // 'caminho/foto4.jpg',
+];
+
+const items = document.querySelectorAll('.gallery-item');
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lb-img');
+const lbCount = document.getElementById('lb-count');
+let current = 0;
+
+function openLb(i){
+  if(!fotos.length){ return; }
+  current = i;
+  lbImg.src = fotos[current];
+  lbCount.textContent = String(current+1).padStart(2,'0') + ' / ' + String(fotos.length).padStart(2,'0');
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLb(){
+  lb.classList.remove('open');
+  document.body.style.overflow = '';
+}
+function navLb(dir){
+  current = (current + dir + fotos.length) % fotos.length;
+  lbImg.src = fotos[current];
+  lbCount.textContent = String(current+1).padStart(2,'0') + ' / ' + String(fotos.length).padStart(2,'0');
+}
+
+// Aplica fotos (se houver) nos placeholders
+fotos.forEach((src,i)=>{
+  if(items[i] && src){
+    const img = items[i].querySelector('img');
+    img.src = src;
+    img.style.display = 'block';
+    img.alt = 'Foto ' + (i+1);
+  }
+});
+
+items.forEach(el=>{
+  el.onclick = ()=>{
+    const i = parseInt(el.dataset.index);
+    openLb(i);
+  };
+});
+document.getElementById('lb-close').onclick = closeLb;
+document.getElementById('lb-prev').onclick = ()=>navLb(-1);
+document.getElementById('lb-next').onclick = ()=>navLb(1);
+lb.onclick = (e)=>{ if(e.target === lb) closeLb(); };
+addEventListener('keydown',(e)=>{
+  if(!lb.classList.contains('open')) return;
+  if(e.key === 'Escape') closeLb();
+  if(e.key === 'ArrowLeft') navLb(-1);
+  if(e.key === 'ArrowRight') navLb(1);
+});
+</script>
+</body>
+</html>
