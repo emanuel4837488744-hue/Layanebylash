@@ -289,19 +289,19 @@ footer{padding:3rem 0 2rem;border-top:1px solid var(--line)}
     </div>
     <div class="gallery-grid">
       <div class="gallery-item rv" data-index="0">
-        <img src="foto1.jpg" alt="foto1.jpg" class="has-img" style="display:none">
+        <img src="" alt="Foto 01" class="has-img" style="display:none">
         <div class="ph"><svg><use href="#cam"/></svg><span>Foto 01</span></div>
       </div>
       <div class="gallery-item rv" data-index="1">
-        <img src="foto2.jpg" alt="foto2.jpg" class="has-img" style="display:none">
+        <img src="" alt="Foto 02" class="has-img" style="display:none">
         <div class="ph"><svg><use href="#cam"/></svg><span>Foto 02</span></div>
       </div>
       <div class="gallery-item rv" data-index="2">
-        <img src="foto3.jpg" alt="foto3.jpg" class="has-img" style="display:none">
+        <img src="" alt="Foto 03" class="has-img" style="display:none">
         <div class="ph"><svg><use href="#cam"/></svg><span>Foto 03</span></div>
       </div>
       <div class="gallery-item rv" data-index="3">
-        <img src="foto4.jpg" alt="foto4.jpg" class="has-img" style="display:none">
+        <img src="" alt="Foto 04" class="has-img" style="display:none">
         <div class="ph"><svg><use href="#cam"/></svg><span>Foto 04</span></div>
       </div>
     </div>
@@ -370,12 +370,12 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 
 /* ============ GALERIA / LIGHTBOX ============ */
-// Para adicionar suas fotos, basta substituir os src="" abaixo pelos caminhos das imagens:
+// Array com os nomes exatos dos arquivos de imagem
 const fotos = [
-  // 'foto1.jpg',
-  // 'foto2.jpg',
-  // 'foto3.jpg',
-  // 'foto4.jpg',
+  'foto1.jpg',
+  'foto2.jpg',
+  'foto3.jpg',
+  'foto4.jpg'
 ];
 
 const items = document.querySelectorAll('.gallery-item');
@@ -402,7 +402,7 @@ function navLb(dir){
   lbCount.textContent = String(current+1).padStart(2,'0') + ' / ' + String(fotos.length).padStart(2,'0');
 }
 
-// Aplica fotos (se houver) nos placeholders
+// Aplica as fotos nos placeholders e as torna visíveis
 fotos.forEach((src,i)=>{
   if(items[i] && src){
     const img = items[i].querySelector('img');
